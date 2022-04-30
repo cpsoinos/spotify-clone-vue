@@ -12,6 +12,7 @@
   "devDependencies": {
     "@coreyander/eslint-config-vue-ts": "^0.1.0",
     "@coreyander/prettier-config": "^0.3.0",
+    "@nuxtjs/tailwindcss": "^5.0.3",
     "eslint": "^8.14.0",
     "eslint-plugin-n": "^15.2.0",
     "nuxt": "3.0.0-rc.1",
