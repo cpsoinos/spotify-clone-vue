@@ -1,0 +1,31 @@
+@font-face {
+  font-display: swap;
+  font-family: spotify-circular;
+  font-style: normal;
+  font-weight: 200;
+  src: url(~/assets/fonts/CircularStd-Light.otf) format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: spotify-circular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(~/assets/fonts/CircularStd-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: spotify-circular;
+  font-style: normal;
+  font-weight: 700;
+  src: url(~/assets/fonts/CircularStd-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: spotify-circular;
+  font-style: normal;
+  font-weight: 900;
+  src: url(~/assets/fonts/CircularStd-Black.otf) format('opentype');
+}
