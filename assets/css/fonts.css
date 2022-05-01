@@ -29,3 +29,11 @@
   font-weight: 900;
   src: url(~/assets/fonts/CircularStd-Black.otf) format('opentype');
 }
+
+@font-face {
+  font-display: swap;
+  font-family: sf-pro;
+  font-style: normal;
+  font-weight: 400;
+  src: url(~/assets/fonts/SF-Pro-Text-Regular.otf) format('opentype');
+}
