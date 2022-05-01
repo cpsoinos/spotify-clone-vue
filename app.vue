@@ -7,9 +7,9 @@ useHead({
 </script>
 
 <template>
-  <div class="flex items-center justify-center min-h-screen">
+  <div class="flex justify-center items-center min-h-screen">
     <div
-      class="max-w-[390px] w-full flex mx-auto flex-col relative shadow-2xl overflow-hidden overflow-y-scroll sm:rounded-xl"
-    ></div>
+      class="flex overflow-hidden overflow-y-scroll relative flex-col mx-auto w-full max-w-[390px] shadow-2xl sm:rounded-xl"
+    />
   </div>
 </template>
