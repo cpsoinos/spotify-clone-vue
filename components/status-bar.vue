@@ -18,7 +18,7 @@ const time = computed(() => {
 
 <template>
   <div
-    class="flex pt-6 mb-8 text-white font-apple items-center justify-between w-full"
+    class="flex pt-6 px-6 mb-8 text-white font-apple items-center justify-between w-full"
   >
     <span class="font-semibold">{{ time }}</span>
     <div class="flex items-center gap-2">
