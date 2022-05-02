@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@coreyander/eslint-config-vue-ts': ^0.1.0
+  '@coreyander/nuxt-svgo': link:/Users/cpsoinos/development/nuxt-svgo
   '@coreyander/prettier-config': ^0.3.0
   '@nuxtjs/eslint-config-typescript': ^9.0.0
   '@nuxtjs/tailwindcss': ^5.0.3
@@ -11,9 +12,11 @@ specifiers:
   nuxt: 3.0.0-rc.1
   prettier: ^2.6.2
   typescript: ^4.6.4
+  vite-svg-loader: ^3.3.0
 
 devDependencies:
   '@coreyander/eslint-config-vue-ts': 0.1.0_cehtwaryhl4mppvpy2bo3fsjiq
+  '@coreyander/nuxt-svgo': link:../nuxt-svgo
   '@coreyander/prettier-config': 0.3.0
   '@nuxtjs/eslint-config-typescript': 9.0.0_t725usgvqspm5woeqpaxbfp2qu
   '@nuxtjs/tailwindcss': 5.0.3
@@ -23,6 +26,7 @@ devDependencies:
   nuxt: 3.0.0-rc.1
   prettier: 2.6.2
   typescript: 4.6.4
+  vite-svg-loader: 3.3.0
 
 packages:
 
@@ -6944,6 +6948,13 @@ packages:
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.4
       vscode-uri: 3.0.3
+    dev: true
+
+  /vite-svg-loader/3.3.0:
+    resolution: {integrity: sha512-3bvC4NoaBIr8e9DoiYBjC/C8zg83wfc565PiWhUfJML1X4nGbVsGImOabWX1ebah8EYlRwIhRXkFjh7UntF1dg==}
+    dependencies:
+      '@vue/compiler-sfc': 3.2.33
+      svgo: 2.8.0
     dev: true
 
   /vite/2.9.6:
