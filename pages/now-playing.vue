@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
-// import Vibrant from 'node-vibrant'
 import analyze from 'rgbaster'
 
 const currentAlbum = reactive({
