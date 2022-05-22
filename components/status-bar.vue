@@ -18,13 +18,13 @@ const time = computed(() => {
 
 <template>
   <div
-    class="flex pt-6 px-6 mb-8 text-white font-apple items-center justify-between w-full"
+    class="flex justify-between items-center px-6 pt-6 mb-8 w-full font-apple text-white"
   >
     <span class="font-semibold">{{ time }}</span>
-    <div class="flex items-center gap-2">
-      <icon-cellular-connectivity class="text-white w-5" />
-      <icon-wifi class="block text-white w-5 h-5" />
-      <icon-battery class="text-white h-3" />
+    <div class="flex gap-2 items-center">
+      <icon-cellular-connectivity class="w-5 text-white" />
+      <icon-wifi class="block w-5 h-5 text-white" />
+      <icon-battery class="h-3 text-white" />
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import analyze from 'rgbaster'
 import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
-import analyze from 'rgbaster'
 
 const currentAlbum = reactive({
   title: 'Synthesis',
@@ -15,20 +15,22 @@ const onImgLoad = () => {
   imgIsLoaded.value = true
 }
 const primaryColor = ref('#000')
-onMounted(() => getPalette())
 const getPalette = async () => {
   const palette = await analyze(currentAlbum.artwork)
   const index = Math.floor(palette.length / 2)
   primaryColor.value = palette[index].color
 }
+onMounted(() => getPalette())
 </script>
 
 <template>
-  <div class="text-white font-spotify w-full px-4">
-    <div class="flex items-center justify-between mb-12">
-      <icon-chevron-down class="h-5 w-5" />
-      <h1 class="text-xs font-semibold">{{ currentAlbum.title }}</h1>
-      <icon-ellipses class="h-5 w-5" />
+  <div class="px-4 w-full font-spotify text-white">
+    <div class="flex justify-between items-center mb-12">
+      <icon-chevron-down class="w-5 h-5" />
+      <h1 class="text-xs font-semibold">
+        {{ currentAlbum.title }}
+      </h1>
+      <icon-ellipses class="w-5 h-5" />
     </div>
 
     <img
@@ -36,7 +38,7 @@ const getPalette = async () => {
       class="w-full"
       :src="currentAlbum.artwork"
       @load="onImgLoad"
-    />
+    >
   </div>
 </template>
 
