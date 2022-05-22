@@ -4,7 +4,7 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    ['@coreyander/nuxt-svgo', { multipass: true, removeViewBox: false }]
+    ['nuxt-svgo', { svgoConfig: { multipass: true, removeViewBox: false } }]
   ],
   typescript: {
     shim: false
