@@ -13,7 +13,7 @@
     "@cpsoinos/eslint-config-vue-ts": "^0.0.2",
     "@cpsoinos/prettier-config": "^0.0.0",
     "@nuxtjs/eslint-config-typescript": "^9.0.0",
-    "@nuxtjs/tailwindcss": "^5.0.3",
+    "@nuxtjs/tailwindcss": "^5.1.2",
     "eslint": "^8.14.0",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-tailwindcss": "^3.5.0",
