@@ -38,7 +38,7 @@ onMounted(() => getPalette())
       class="w-full"
       :src="currentAlbum.artwork"
       @load="onImgLoad"
-    >
+    />
   </div>
 </template>
 
