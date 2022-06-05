@@ -14,11 +14,14 @@ const imgIsLoaded = ref(false)
 const onImgLoad = () => {
   imgIsLoaded.value = true
 }
+
+const palette = ref([])
 const primaryColor = ref('#000')
+
 const getPalette = async () => {
-  const palette = await analyze(currentAlbum.artwork)
-  const index = Math.floor(palette.length / 2)
-  primaryColor.value = palette[index].color
+  palette.value = await analyze(currentAlbum.artwork)
+  const index = Math.floor(palette.value.length / 2)
+  primaryColor.value = palette.value[index].color
 }
 onMounted(() => getPalette())
 </script>
@@ -38,7 +41,7 @@ onMounted(() => getPalette())
       class="w-full"
       :src="currentAlbum.artwork"
       @load="onImgLoad"
-    >
+    />
   </div>
 </template>
 

@@ -1,11 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@cpsoinos/eslint-config-vue-ts': ^0.0.3
+  '@cpsoinos/eslint-config-vue-ts': ^0.1.0
   '@cpsoinos/prettier-config': ^0.0.0
   '@nuxtjs/eslint-config-typescript': ^9.0.0
   '@nuxtjs/tailwindcss': ^5.1.2
   eslint: ^8.14.0
+  eslint-config-prettier: ^8.5.0
   eslint-plugin-n: ^15.2.0
   eslint-plugin-tailwindcss: ^3.5.0
   nuxt: 3.0.0-rc.3
@@ -18,11 +19,12 @@ dependencies:
   rgbaster: 2.1.1
 
 devDependencies:
-  '@cpsoinos/eslint-config-vue-ts': 0.0.3_t725usgvqspm5woeqpaxbfp2qu
+  '@cpsoinos/eslint-config-vue-ts': 0.1.0_t725usgvqspm5woeqpaxbfp2qu
   '@cpsoinos/prettier-config': 0.0.0
   '@nuxtjs/eslint-config-typescript': 9.0.0_t725usgvqspm5woeqpaxbfp2qu
   '@nuxtjs/tailwindcss': 5.1.2
   eslint: 8.14.0
+  eslint-config-prettier: 8.5.0_eslint@8.14.0
   eslint-plugin-n: 15.2.0_eslint@8.14.0
   eslint-plugin-tailwindcss: 3.5.0
   nuxt: 3.0.0-rc.3
@@ -354,8 +356,8 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cpsoinos/eslint-config-base/0.0.0_iqjbwfvwlbjep2xhectfqm3l6a:
-    resolution: {integrity: sha512-Z8A+pl+3kulIx8YmFENWRAW4jLTheE2h3DPSOlbSQkGmLhJ6CqPu0u9KcBKoipnVMy9pphAS9cMQG/ok9FZbvw==}
+  /@cpsoinos/eslint-config-base/0.2.0_iqjbwfvwlbjep2xhectfqm3l6a:
+    resolution: {integrity: sha512-KpNYIo+qjocxLdYA3NqDtzuBxStCeXC3EYffFf1BILA8ZGmpENLZv/FnldkoQoLo2iUC42qOVDfM1TsC+ZnI2g==}
     peerDependencies:
       eslint: '>=7.4.0'
     dependencies:
@@ -374,12 +376,12 @@ packages:
       - supports-color
     dev: true
 
-  /@cpsoinos/eslint-config-typescript/0.2.0_t725usgvqspm5woeqpaxbfp2qu:
-    resolution: {integrity: sha512-7D50yJt06UXoW0pftgLrXzPBVWdz497VLLCNW7RUhHZJdK3V6ek536l8hOftBTBtEaQ+a09Zn/mCe1eL+heiDg==}
+  /@cpsoinos/eslint-config-typescript/0.2.2_t725usgvqspm5woeqpaxbfp2qu:
+    resolution: {integrity: sha512-OVeSGIdBmVswGxXiav/h+1afguSoD8aNfWj3b59nbZSlJ4jK4bP3gHG4nRgpIX/o5tgFSv+7HfGSZzKOnxashQ==}
     peerDependencies:
       typescript: ^4.4.3
     dependencies:
-      '@cpsoinos/eslint-config-base': 0.0.0_iqjbwfvwlbjep2xhectfqm3l6a
+      '@cpsoinos/eslint-config-base': 0.2.0_iqjbwfvwlbjep2xhectfqm3l6a
       '@typescript-eslint/eslint-plugin': 5.21.0_vxtfsxfxxyksjzzdyas4bgfolu
       '@typescript-eslint/parser': 5.21.0_t725usgvqspm5woeqpaxbfp2qu
       eslint-config-prettier: 8.5.0_eslint@8.14.0
@@ -393,10 +395,11 @@ packages:
       - supports-color
     dev: true
 
-  /@cpsoinos/eslint-config-vue-ts/0.0.3_t725usgvqspm5woeqpaxbfp2qu:
-    resolution: {integrity: sha512-7mDe3dOX+bfSHFKqlSfllBTdPv9EeVeNVrRvJWDqO7lCfqmzggVnQ6ZFK8jWs69NadvMEii9TzU8tUXtWLExwg==}
+  /@cpsoinos/eslint-config-vue-ts/0.1.0_t725usgvqspm5woeqpaxbfp2qu:
+    resolution: {integrity: sha512-MJDcCeMTPqd0JsfiFD/sepntzIv/WSq5B71dZj932yPd+nPmx9Qm0qtz1JlDzXSNn9yLUtV3FfIC9Jr8wHDRvw==}
     dependencies:
-      '@cpsoinos/eslint-config-typescript': 0.2.0_t725usgvqspm5woeqpaxbfp2qu
+      '@cpsoinos/eslint-config-typescript': 0.2.2_t725usgvqspm5woeqpaxbfp2qu
+      eslint-config-prettier: 8.5.0_eslint@8.14.0
       eslint-plugin-vue: 8.7.1_eslint@8.14.0
     transitivePeerDependencies:
       - eslint

@@ -10,11 +10,12 @@
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\""
   },
   "devDependencies": {
-    "@cpsoinos/eslint-config-vue-ts": "^0.0.3",
+    "@cpsoinos/eslint-config-vue-ts": "^0.1.0",
     "@cpsoinos/prettier-config": "^0.0.0",
     "@nuxtjs/eslint-config-typescript": "^9.0.0",
     "@nuxtjs/tailwindcss": "^5.1.2",
     "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-n": "^15.2.0",
     "eslint-plugin-tailwindcss": "^3.5.0",
     "nuxt": "3.0.0-rc.3",
