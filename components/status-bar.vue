@@ -18,13 +18,58 @@ const time = computed(() => {
 
 <template>
   <div
-    class="flex justify-between items-center px-6 pt-6 mb-8 w-full font-apple text-white"
+    class="grid grid-cols-3 mb-8 w-full font-apple text-white relative status-bar"
   >
-    <span class="font-semibold">{{ time }}</span>
-    <div class="flex gap-2 items-center">
+    <!-- <span class="font-semibold pt-1 text-center">{{ time }}</span> -->
+    <div class="bg-black notch"></div>
+    <!-- <div class="flex gap-2 items-center justify-center pt-1">
       <icon-cellular-connectivity class="w-5 text-white" />
       <icon-wifi class="block w-5 h-5 text-white" />
       <icon-battery class="h-3 text-white" />
-    </div>
+    </div> -->
   </div>
 </template>
+
+<style>
+:root {
+  --corner-size: 6;
+}
+
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(1 / 3 * 100%);
+  height: 24px;
+  background-color: black;
+  border-radius: 0 0 18px 18px;
+  transform: translateX(-50%);
+}
+
+.notch::before,
+.notch::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(var(--corner-size) * -1px);
+  width: calc(var(--corner-size) * 2px);
+  height: calc(var(--corner-size) * 1px);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(
+    circle at 0 100%,
+    transparent 6px,
+    black calc(var(--corner-size) * 1px)
+  );
+}
+
+.notch::after {
+  left: 100%;
+  margin-right: calc(var(--corner-size) * 1px);
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    transparent 6px,
+    black calc(var(--corner-size) * 1px)
+  );
+}
+</style>

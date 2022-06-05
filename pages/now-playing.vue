@@ -3,6 +3,8 @@ import analyze from 'rgbaster'
 import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
 
+const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
+
 const currentAlbum = reactive({
   title: 'Synthesis',
   artist: 'Evanescence',
@@ -22,12 +24,13 @@ const getPalette = async () => {
   palette.value = await analyze(currentAlbum.artwork)
   const index = Math.floor(palette.value.length / 2)
   primaryColor.value = palette.value[index].color
+  emit('color-set', primaryColor.value)
 }
 onMounted(() => getPalette())
 </script>
 
 <template>
-  <div class="px-4 w-full font-spotify text-white">
+  <div class="px-4 w-full font-spotify text-white now-playing">
     <div class="flex justify-between items-center mb-12">
       <icon-chevron-down class="w-5 h-5" />
       <h1 class="text-xs font-semibold">
@@ -44,9 +47,3 @@ onMounted(() => getPalette())
     />
   </div>
 </template>
-
-<style>
-.now-playing {
-  background-image: linear-gradient(v-bind(primaryColor), rgb(0, 0, 0) 85%);
-}
-</style>
