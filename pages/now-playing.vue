@@ -12,25 +12,17 @@ const currentAlbum = reactive({
 })
 
 const imgRef = ref<HTMLImageElement>(null)
-const imgIsLoaded = ref(false)
-const onImgLoad = () => {
-  imgIsLoaded.value = true
-}
-
-const palette = ref([])
-const primaryColor = ref('#000')
 
 const getPalette = async () => {
-  palette.value = await analyze(currentAlbum.artwork)
-  const index = Math.floor(palette.value.length / 2)
-  primaryColor.value = palette.value[index].color
-  emit('color-set', primaryColor.value)
+  const palette = await analyze(currentAlbum.artwork)
+  const index = Math.floor(palette.length / 2)
+  emit('color-set', palette[index].color)
 }
 onMounted(() => getPalette())
 </script>
 
 <template>
-  <div class="px-4 w-full font-spotify text-white now-playing">
+  <div class="px-4 w-full font-spotify text-white">
     <div class="flex justify-between items-center mb-12">
       <icon-chevron-down class="w-5 h-5" />
       <h1 class="text-xs font-semibold">
@@ -39,11 +31,6 @@ onMounted(() => getPalette())
       <icon-ellipses class="w-5 h-5" />
     </div>
 
-    <img
-      ref="imgRef"
-      class="w-full"
-      :src="currentAlbum.artwork"
-      @load="onImgLoad"
-    />
+    <img ref="imgRef" class="w-full" :src="currentAlbum.artwork" />
   </div>
 </template>
