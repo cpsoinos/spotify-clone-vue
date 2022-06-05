@@ -18,15 +18,17 @@ const time = computed(() => {
 
 <template>
   <div
-    class="grid grid-cols-3 mb-8 w-full font-apple text-white relative status-bar"
+    class="grid relative grid-cols-3 mb-8 w-full font-apple text-white status-bar"
   >
-    <!-- <span class="font-semibold pt-1 text-center">{{ time }}</span> -->
-    <div class="bg-black notch"></div>
-    <!-- <div class="flex gap-2 items-center justify-center pt-1">
-      <icon-cellular-connectivity class="w-5 text-white" />
-      <icon-wifi class="block w-5 h-5 text-white" />
-      <icon-battery class="h-3 text-white" />
-    </div> -->
+    <span class="pt-1.5 text-[15px] font-semibold text-center">{{ time }}</span>
+    <div>
+      <div class="bg-black notch"></div>
+    </div>
+    <div class="flex gap-2 justify-center items-center pt-1.5">
+      <icon-cellular-connectivity class="w-[18px] text-white" />
+      <icon-wifi class="block w-[18px] text-white" />
+      <icon-battery class="w-[24px] text-white" />
+    </div>
   </div>
 </template>
 
@@ -39,8 +41,8 @@ const time = computed(() => {
   position: absolute;
   top: 0;
   left: 50%;
-  width: calc(1 / 3 * 100%);
-  height: 24px;
+  width: 144px;
+  height: 28px;
   background-color: black;
   border-radius: 0 0 18px 18px;
   transform: translateX(-50%);
