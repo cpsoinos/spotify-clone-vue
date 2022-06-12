@@ -18,9 +18,9 @@ const onColorSet = (color: string) => {
       class="flex overflow-hidden overflow-y-scroll relative mx-auto w-full max-w-[390px] h-[843px] bg-black rounded-[3rem] border-2 border-zinc-600 shadow-2xl"
     >
       <div class="flex flex-col items-center p-3 w-full">
-        <div class="background-gradient w-full rounded-[2rem]">
-          <status-bar />
-          <nuxt-page @color-set="onColorSet" />
+        <div class="background-gradient w-full h-full rounded-[2rem]">
+          <StatusBar />
+          <NuxtPage @color-set="onColorSet" />
         </div>
       </div>
     </div>
@@ -30,5 +30,6 @@ const onColorSet = (color: string) => {
 <style>
 .background-gradient {
   background-image: linear-gradient(v-bind(primaryColor), rgb(0, 0, 0) 85%);
+  /* background-image: linear-gradient(rgba(152, 48, 48, 0.6), rgb(0, 0, 0) 85%); */
 }
 </style>
