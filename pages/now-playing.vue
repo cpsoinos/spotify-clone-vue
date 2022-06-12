@@ -30,6 +30,31 @@ const getPalette = async () => {
 }
 
 onMounted(getPalette)
+
+const {
+  counter: elapsed,
+  pause,
+  resume: play
+} = useInterval(1000, { controls: true })
+
+const controls = reactive<{
+  isPlaying: boolean
+  isShuffling: boolean
+  repeat: 'none' | 'all' | 'one'
+}>({
+  isPlaying: true,
+  isShuffling: false,
+  repeat: 'all'
+})
+
+const onPause = () => {
+  pause()
+  controls.isPlaying = false
+}
+const onPlay = () => {
+  play()
+  controls.isPlaying = true
+}
 </script>
 
 <template>
@@ -56,6 +81,12 @@ onMounted(getPalette)
       />
     </div>
 
-    <TrackProgressBar :track-length="currentTrack.length" />
+    <TrackProgressBar :track-length="currentTrack.length" :elapsed="elapsed" />
+    <TrackControls
+      v-bind="controls"
+      @pause="onPause"
+      @play="onPlay"
+      class="mt-14"
+    />
   </div>
 </template>

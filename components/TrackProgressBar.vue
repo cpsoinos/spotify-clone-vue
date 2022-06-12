@@ -1,25 +1,18 @@
 <script setup lang="ts">
-const props = defineProps<{ trackLength: number }>()
-// const elapsed = ref(0)
+const props = defineProps<{ trackLength: number; elapsed: number }>()
 
-const {
-  counter: elapsed,
-  pause,
-  resume: play
-} = useInterval(1000, { controls: true })
-
-watch(elapsed, (value) => {
-  if (value >= props.trackLength) {
-    pause()
-  }
-})
+// watch(props.elapsed, (value) => {
+//   if (value >= props.trackLength) {
+//     pause()
+//   }
+// })
 
 const progressPercent = computed(() => {
-  return ((elapsed.value / props.trackLength) * 100).toFixed(2)
+  return ((props.elapsed / props.trackLength) * 100).toFixed(2)
 })
 
 const displayElapsed = computed(() => {
-  const initialDisplay = new Date(elapsed.value * 1000)
+  const initialDisplay = new Date(props.elapsed * 1000)
     .toISOString()
     .substring(14, 19)
   return initialDisplay.startsWith('0')
@@ -28,7 +21,7 @@ const displayElapsed = computed(() => {
 })
 
 const displayRemaining = computed(() => {
-  const remaining = props.trackLength - elapsed.value
+  const remaining = props.trackLength - props.elapsed
   const initialDisplay = new Date(remaining * 1000)
     .toISOString()
     .substring(14, 19)
