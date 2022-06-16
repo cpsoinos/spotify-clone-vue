@@ -3,6 +3,8 @@
 import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
 import IconLikeFilled from '~/assets/svg/spotify/like-filled.svg'
+import IconConnectToDevice from '~/assets/svg/spotify/connect-to-device.svg'
+import IconShare from '~/assets/svg/spotify/share.svg'
 
 // const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
 
@@ -113,7 +115,14 @@ watch(elapsed, (value) => {
       @play="onPlay"
       @repeat="onRepeat"
       @shuffle="onShuffle"
-      class="mt-14"
+      class="mt-12"
     />
+
+    <div class="flex justify-between mt-12">
+      <icon-connect-to-device class="fill-current w-5 h-5" />
+      <div>
+        <icon-share class="fill-current w-5 h-5" />
+      </div>
+    </div>
   </div>
 </template>
