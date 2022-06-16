@@ -1,12 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{ trackLength: number; elapsed: number }>()
 
-// watch(props.elapsed, (value) => {
-//   if (value >= props.trackLength) {
-//     pause()
-//   }
-// })
-
 const progressPercent = computed(() => {
   return ((props.elapsed / props.trackLength) * 100).toFixed(2)
 })

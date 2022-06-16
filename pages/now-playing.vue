@@ -55,6 +55,13 @@ const onPlay = () => {
   play()
   controls.isPlaying = true
 }
+
+watch(elapsed, (value) => {
+  if (value >= currentTrack.length) {
+    onPause()
+    elapsed.value = 0
+  }
+})
 </script>
 
 <template>

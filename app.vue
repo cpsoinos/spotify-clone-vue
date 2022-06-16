@@ -29,7 +29,7 @@ const onColorSet = (color: string) => {
 
 <style>
 .background-gradient {
-  background-image: linear-gradient(v-bind(primaryColor), rgb(0, 0, 0) 85%);
-  /* background-image: linear-gradient(rgba(152, 48, 48, 0.6), rgb(0, 0, 0) 85%); */
+  /* background-image: linear-gradient(v-bind(primaryColor), rgb(0, 0, 0) 85%); */
+  background-image: linear-gradient(rgba(152, 48, 48, 0.6), rgb(0, 0, 0) 85%);
 }
 </style>
