@@ -21,39 +21,85 @@ const emit = defineEmits<{
   (e: 'next'): void
   (e: 'repeat'): void
 }>()
+
+const repeatIcon = computed(() => {
+  switch (props.repeat) {
+    case 'none':
+      return IconRepeat
+    case 'one':
+      return IconRepeatOne
+    case 'all':
+      return IconRepeat
+  }
+})
 </script>
 
 <template>
   <div class="flex items-center justify-between">
-    <button @click="emit('shuffle')">
-      <icon-shuffle class="w-6 h-6 text-white fill-current" />
+    <button
+      @click="emit('shuffle')"
+      class="relative"
+      :class="{
+        'text-spotify-essentialBrightAccent shuffle-all': isShuffling,
+        'text-white': !isShuffling
+      }"
+    >
+      <icon-shuffle class="w-6 h-6 fill-current" />
     </button>
 
-    <button @click="emit('previous')">
-      <icon-skip-backward class="w-10 h-10 text-white fill-current" />
+    <button @click="emit('previous')" class="text-white active:text-gray-300">
+      <icon-skip-backward class="w-10 h-10 fill-current" />
     </button>
 
     <button
       v-if="!isPlaying"
       @click="emit('play')"
-      class="rounded-full bg-white p-4 flex items-center justify-center"
+      class="group rounded-full bg-white p-4 flex items-center justify-center active:bg-gray-300 active:m-1"
     >
-      <icon-play class="w-8 h-8 text-black fill-current" />
+      <icon-play
+        class="w-8 h-8 group-active:w-6 group-active:h-6 text-black fill-current"
+      />
     </button>
     <button
       v-else
       @click="emit('pause')"
-      class="rounded-full bg-white p-4 flex items-center justify-center"
+      class="group rounded-full bg-white p-4 flex items-center justify-center active:bg-gray-300 active:m-1"
     >
-      <icon-pause class="w-8 h-8 text-black fill-current" />
+      <icon-pause
+        class="w-8 h-8 group-active:w-6 group-active:h-6 text-black fill-current"
+      />
     </button>
 
-    <button @click="emit('next')">
-      <icon-skip-forward class="w-10 h-10 text-white fill-current" />
+    <button @click="emit('next')" class="text-white active:text-gray-300">
+      <icon-skip-forward class="w-10 h-10 fill-current" />
     </button>
 
-    <button @click="emit('shuffle')">
-      <icon-repeat class="w-6 h-6 text-white fill-current" />
+    <button
+      @click="emit('repeat')"
+      class="relative"
+      :class="{
+        'repeat-all': repeat === 'all',
+        'text-spotify-essentialBrightAccent': repeat !== 'none',
+        'text-white': repeat === 'none'
+      }"
+    >
+      <component :is="repeatIcon" class="w-6 h-6 fill-current" />
     </button>
   </div>
 </template>
+
+<style scoped>
+.shuffle-all::after,
+.repeat-all::after {
+  background-color: currentColor;
+  position: absolute;
+  content: '';
+  display: block;
+  height: 4px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  width: 4px;
+  border-radius: 50%;
+  bottom: 0;
+}
+</style>

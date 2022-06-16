@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import analyze from 'rgbaster'
+// import analyze from 'rgbaster'
 import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
 import IconLikeFilled from '~/assets/svg/spotify/like-filled.svg'
 
-const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
+// const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
 
 const currentAlbum = reactive({
   title: 'Synthesis',
@@ -17,25 +17,23 @@ const currentTrack = reactive({
   length: 294
 })
 
-const imgRef = ref<HTMLImageElement>(null)
+// const imgRef = ref<HTMLImageElement>(null)
 
-const palette = ref([])
-const primaryColor = ref('#000')
+// const palette = ref([])
+// const primaryColor = ref('#000')
 
-const getPalette = async () => {
-  palette.value = await analyze(currentAlbum.artwork)
-  const index = Math.floor(palette.value.length / 2)
-  primaryColor.value = palette.value[index].color
-  emit('color-set', primaryColor.value)
-}
+// const getPalette = async () => {
+//   palette.value = await analyze(currentAlbum.artwork)
+//   const index = Math.floor(palette.value.length / 2)
+//   primaryColor.value = palette.value[index].color
+//   emit('color-set', primaryColor.value)
+// }
 
-onMounted(getPalette)
+// onMounted(getPalette)
 
-const {
-  counter: elapsed,
-  pause,
-  resume: play
-} = useInterval(1000, { controls: true })
+const { counter, pause, resume: play } = useInterval(100, { controls: true })
+
+const elapsed = computed(() => counter.value / 10)
 
 const controls = reactive<{
   isPlaying: boolean
@@ -55,11 +53,27 @@ const onPlay = () => {
   play()
   controls.isPlaying = true
 }
+const onRepeat = () => {
+  switch (controls.repeat) {
+    case 'none':
+      controls.repeat = 'all'
+      break
+    case 'all':
+      controls.repeat = 'one'
+      break
+    case 'one':
+      controls.repeat = 'none'
+      break
+  }
+}
+const onShuffle = () => {
+  controls.isShuffling = !controls.isShuffling
+}
 
 watch(elapsed, (value) => {
   if (value >= currentTrack.length) {
     onPause()
-    elapsed.value = 0
+    counter.value = 0
   }
 })
 </script>
@@ -88,11 +102,17 @@ watch(elapsed, (value) => {
       />
     </div>
 
-    <TrackProgressBar :track-length="currentTrack.length" :elapsed="elapsed" />
+    <TrackProgressBar
+      :track-length="currentTrack.length"
+      :elapsed="elapsed"
+      :counter="counter"
+    />
     <TrackControls
       v-bind="controls"
       @pause="onPause"
       @play="onPlay"
+      @repeat="onRepeat"
+      @shuffle="onShuffle"
       class="mt-14"
     />
   </div>
