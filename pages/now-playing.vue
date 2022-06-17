@@ -84,11 +84,15 @@ watch(elapsed, (value) => {
 <template>
   <div class="px-4 w-full font-spotify text-white">
     <div class="flex justify-between items-center mb-12">
-      <icon-chevron-down class="w-5 h-5" />
+      <button>
+        <icon-chevron-down class="w-5 h-5" />
+      </button>
       <p class="text-xs font-semibold">
         {{ currentAlbum.title }}
       </p>
-      <icon-ellipses class="w-5 h-5" />
+      <button>
+        <icon-ellipses class="w-5 h-5" />
+      </button>
     </div>
 
     <img ref="imgRef" class="w-full" :src="currentAlbum.artwork" />
@@ -116,19 +120,19 @@ watch(elapsed, (value) => {
       @play="onPlay"
       @repeat="onRepeat"
       @shuffle="onShuffle"
-      class="mt-12"
+      class="mt-10"
     />
 
-    <div class="flex justify-between mt-12">
+    <div class="flex justify-between mt-9">
       <button>
-        <icon-connect-to-device class="fill-current w-5 h-5" />
+        <icon-connect-to-device class="fill-current w-4 h-4" />
       </button>
       <div class="flex items-center gap-7">
         <button>
-          <icon-share class="fill-current w-5 h-5" />
+          <icon-share class="fill-current w-4 h-4" />
         </button>
         <button>
-          <icon-queue class="fill-current w-5 h-5" />
+          <icon-queue class="fill-current w-4 h-4" />
         </button>
       </div>
     </div>

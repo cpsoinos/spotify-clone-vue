@@ -44,11 +44,11 @@ const repeatIcon = computed(() => {
         'text-white': !isShuffling
       }"
     >
-      <icon-shuffle class="w-6 h-6 fill-current" />
+      <icon-shuffle class="w-5 h-5 fill-current" />
     </button>
 
     <button @click="emit('previous')" class="text-white active:text-gray-300">
-      <icon-skip-backward class="w-10 h-10 fill-current" />
+      <icon-skip-backward class="w-9 h-9 fill-current" />
     </button>
 
     <button
@@ -57,7 +57,7 @@ const repeatIcon = computed(() => {
       class="group rounded-full bg-white p-4 flex items-center justify-center active:bg-gray-300 active:m-1"
     >
       <icon-play
-        class="w-8 h-8 group-active:w-6 group-active:h-6 text-black fill-current"
+        class="w-7 h-7 group-active:w-5 group-active:h-5 text-black fill-current"
       />
     </button>
     <button
@@ -66,12 +66,12 @@ const repeatIcon = computed(() => {
       class="group rounded-full bg-white p-4 flex items-center justify-center active:bg-gray-300 active:m-1"
     >
       <icon-pause
-        class="w-8 h-8 group-active:w-6 group-active:h-6 text-black fill-current"
+        class="w-7 h-7 group-active:w-5 group-active:h-5 text-black fill-current"
       />
     </button>
 
     <button @click="emit('next')" class="text-white active:text-gray-300">
-      <icon-skip-forward class="w-10 h-10 fill-current" />
+      <icon-skip-forward class="w-9 h-9 fill-current" />
     </button>
 
     <button
@@ -83,7 +83,7 @@ const repeatIcon = computed(() => {
         'text-white': repeat === 'none'
       }"
     >
-      <component :is="repeatIcon" class="w-6 h-6 fill-current" />
+      <component :is="repeatIcon" class="w-5 h-5 fill-current" />
     </button>
   </div>
 </template>
