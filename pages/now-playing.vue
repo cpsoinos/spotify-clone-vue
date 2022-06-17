@@ -16,13 +16,7 @@ const currentTrack = reactive({
   length: 294
 })
 
-const { data: extractedColor } = useFetch('/api/extract-color', {
-  params: { src: currentAlbum.artwork }
-})
-const bgColor = computed(() => {
-  const [r, g, b] = extractedColor.value
-  return `rgba(${r}, ${g}, ${b}, 0.6)`
-})
+const bgColor = useImgBgColor(currentAlbum.artwork)
 onMounted(() => emit('color-set', bgColor.value))
 
 const { counter, pause, resume: play } = useInterval(100, { controls: true })
