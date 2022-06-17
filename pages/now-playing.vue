@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// import analyze from 'rgbaster'
+import analyze from 'rgbaster'
 import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
 import IconLikeFilled from '~/assets/svg/spotify/like-filled.svg'
@@ -7,7 +7,7 @@ import IconConnectToDevice from '~/assets/svg/spotify/connect-to-device.svg'
 import IconShare from '~/assets/svg/spotify/share.svg'
 import IconQueue from '~/assets/svg/spotify/queue.svg'
 
-// const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
+const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
 
 const currentAlbum = reactive({
   title: 'Synthesis',
@@ -20,19 +20,19 @@ const currentTrack = reactive({
   length: 294
 })
 
-// const imgRef = ref<HTMLImageElement>(null)
+const imgRef = ref<HTMLImageElement>(null)
 
-// const palette = ref([])
-// const primaryColor = ref('#000')
+const palette = ref([])
+const primaryColor = ref('#000')
 
-// const getPalette = async () => {
-//   palette.value = await analyze(currentAlbum.artwork)
-//   const index = Math.floor(palette.value.length / 2)
-//   primaryColor.value = palette.value[index].color
-//   emit('color-set', primaryColor.value)
-// }
+const getPalette = async () => {
+  palette.value = await analyze(currentAlbum.artwork)
+  const index = Math.floor(palette.value.length / 2)
+  primaryColor.value = palette.value[index].color
+  emit('color-set', primaryColor.value)
+}
 
-// onMounted(getPalette)
+onMounted(getPalette)
 
 const { counter, pause, resume: play } = useInterval(100, { controls: true })
 

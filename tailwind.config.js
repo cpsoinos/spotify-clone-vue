@@ -43,6 +43,9 @@ module.exports = {
           decorativeSubdued: '#292929',
           essentialBrightAccent: '#1ed760'
         }
+      },
+      fontSize: {
+        xxs: '0.7rem'
       }
     }
   },
