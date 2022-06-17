@@ -37,7 +37,7 @@ const displayRemaining = computed(() => {
     >
       <div class="rounded-full h-2 w-2 bg-white right-0 absolute"></div>
     </div>
-    <div class="w-full flex justify-between text-xs text-gray-300">
+    <div class="w-full flex justify-between text-xxs text-gray-300">
       <span>{{ displayElapsed }}</span>
       <span>-{{ displayRemaining }}</span>
     </div>
