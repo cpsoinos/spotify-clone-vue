@@ -5,6 +5,7 @@ import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
 import IconLikeFilled from '~/assets/svg/spotify/like-filled.svg'
 import IconConnectToDevice from '~/assets/svg/spotify/connect-to-device.svg'
 import IconShare from '~/assets/svg/spotify/share.svg'
+import IconQueue from '~/assets/svg/spotify/queue.svg'
 
 // const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
 
@@ -119,9 +120,16 @@ watch(elapsed, (value) => {
     />
 
     <div class="flex justify-between mt-12">
-      <icon-connect-to-device class="fill-current w-5 h-5" />
-      <div>
-        <icon-share class="fill-current w-5 h-5" />
+      <button>
+        <icon-connect-to-device class="fill-current w-5 h-5" />
+      </button>
+      <div class="flex items-center gap-7">
+        <button>
+          <icon-share class="fill-current w-5 h-5" />
+        </button>
+        <button>
+          <icon-queue class="fill-current w-5 h-5" />
+        </button>
       </div>
     </div>
   </div>
