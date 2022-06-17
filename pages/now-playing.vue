@@ -1,11 +1,7 @@
 <script setup lang="ts">
-import analyze from 'rgbaster'
 import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
 import IconLikeFilled from '~/assets/svg/spotify/like-filled.svg'
-import IconConnectToDevice from '~/assets/svg/spotify/connect-to-device.svg'
-import IconShare from '~/assets/svg/spotify/share.svg'
-import IconQueue from '~/assets/svg/spotify/queue.svg'
 
 const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
 
@@ -20,19 +16,14 @@ const currentTrack = reactive({
   length: 294
 })
 
-const imgRef = ref<HTMLImageElement>(null)
-
-const palette = ref([])
-const primaryColor = ref('#000')
-
-const getPalette = async () => {
-  palette.value = await analyze(currentAlbum.artwork)
-  const index = Math.floor(palette.value.length / 2)
-  primaryColor.value = palette.value[index].color
-  emit('color-set', primaryColor.value)
-}
-
-onMounted(getPalette)
+const { data: extractedColor } = useFetch('/api/extract-color', {
+  params: { src: currentAlbum.artwork }
+})
+const bgColor = computed(() => {
+  const [r, g, b] = extractedColor.value
+  return `rgba(${r}, ${g}, ${b}, 0.6)`
+})
+onMounted(() => emit('color-set', bgColor.value))
 
 const { counter, pause, resume: play } = useInterval(100, { controls: true })
 
@@ -95,7 +86,7 @@ watch(elapsed, (value) => {
       </button>
     </div>
 
-    <img ref="imgRef" class="w-full" :src="currentAlbum.artwork" />
+    <img class="w-full" :src="currentAlbum.artwork" />
 
     <div class="flex items-center mt-14 justify-between">
       <div>
@@ -123,18 +114,6 @@ watch(elapsed, (value) => {
       class="mt-10"
     />
 
-    <div class="flex justify-between mt-9">
-      <button>
-        <icon-connect-to-device class="fill-current w-4 h-4" />
-      </button>
-      <div class="flex items-center gap-7">
-        <button>
-          <icon-share class="fill-current w-4 h-4" />
-        </button>
-        <button>
-          <icon-queue class="fill-current w-4 h-4" />
-        </button>
-      </div>
-    </div>
+    <FooterControls class="mt-9" />
   </div>
 </template>
