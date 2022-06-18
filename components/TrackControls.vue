@@ -35,53 +35,53 @@ const repeatIcon = computed(() => {
 </script>
 
 <template>
-  <div class="flex items-center justify-between">
+  <div class="flex justify-between items-center">
     <button
-      @click="emit('shuffle')"
       class="relative"
       :class="{
         'text-spotify-essentialBrightAccent shuffle-all': isShuffling,
         'text-white': !isShuffling
       }"
+      @click="emit('shuffle')"
     >
       <icon-shuffle class="w-5 h-5 fill-current" />
     </button>
 
-    <button @click="emit('previous')" class="text-white active:text-gray-300">
+    <button class="text-white active:text-gray-300" @click="emit('previous')">
       <icon-skip-backward class="w-9 h-9 fill-current" />
     </button>
 
     <button
       v-if="!isPlaying"
+      class="group flex justify-center items-center p-4 active:m-1 bg-white active:bg-gray-300 rounded-full"
       @click="emit('play')"
-      class="group rounded-full bg-white p-4 flex items-center justify-center active:bg-gray-300 active:m-1"
     >
       <icon-play
-        class="w-7 h-7 group-active:w-5 group-active:h-5 text-black fill-current"
+        class="w-7 group-active:w-5 h-7 group-active:h-5 text-black fill-current"
       />
     </button>
     <button
       v-else
+      class="group flex justify-center items-center p-4 active:m-1 bg-white active:bg-gray-300 rounded-full"
       @click="emit('pause')"
-      class="group rounded-full bg-white p-4 flex items-center justify-center active:bg-gray-300 active:m-1"
     >
       <icon-pause
-        class="w-7 h-7 group-active:w-5 group-active:h-5 text-black fill-current"
+        class="w-7 group-active:w-5 h-7 group-active:h-5 text-black fill-current"
       />
     </button>
 
-    <button @click="emit('next')" class="text-white active:text-gray-300">
+    <button class="text-white active:text-gray-300" @click="emit('next')">
       <icon-skip-forward class="w-9 h-9 fill-current" />
     </button>
 
     <button
-      @click="emit('repeat')"
       class="relative"
       :class="{
         'repeat-all': repeat === 'all',
         'text-spotify-essentialBrightAccent': repeat !== 'none',
         'text-white': repeat === 'none'
       }"
+      @click="emit('repeat')"
     >
       <component :is="repeatIcon" class="w-5 h-5 fill-current" />
     </button>

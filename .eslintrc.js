@@ -6,6 +6,6 @@ module.exports = {
     'prettier'
   ],
   rules: {
-    'tailwindcss/no-custom-classname': [false]
+    'tailwindcss/no-custom-classname': [0]
   }
 }

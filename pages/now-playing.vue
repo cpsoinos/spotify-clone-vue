@@ -3,21 +3,8 @@ import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
 import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
 import IconLikeFilled from '~/assets/svg/spotify/like-filled.svg'
 
-const emit = defineEmits<{ (e: 'color-set', color: string): void }>()
-
-const currentAlbum = reactive({
-  title: 'Synthesis',
-  artist: 'Evanescence',
-  artwork: 'https://i.scdn.co/image/ab67616d00001e02da80a3f19d59adceff0b96fe'
-})
-
-const currentTrack = reactive({
-  title: 'The End Of The Dream',
-  length: 294
-})
-
-const bgColor = useImgBgColor(currentAlbum.artwork)
-onMounted(() => emit('color-set', bgColor.value))
+const currentAlbum = useCurrentAlbum()
+const currentTrack = useCurrentTrack()
 
 const { counter, pause, resume: play } = useInterval(100, { controls: true })
 
@@ -59,7 +46,7 @@ const onShuffle = () => {
 }
 
 watch(elapsed, (value) => {
-  if (value >= currentTrack.length) {
+  if (value >= currentTrack.value.length) {
     onPause()
     counter.value = 0
   }
@@ -82,7 +69,7 @@ watch(elapsed, (value) => {
 
     <img class="w-full" :src="currentAlbum.artwork" />
 
-    <div class="flex items-center mt-14 justify-between">
+    <div class="flex justify-between items-center mt-14">
       <div>
         <h1 class="text-xl font-bold tracking-tighter">
           {{ currentTrack.title }}
@@ -90,7 +77,7 @@ watch(elapsed, (value) => {
         <p class="text-sm text-gray-300">{{ currentAlbum.artist }}</p>
       </div>
       <icon-like-filled
-        class="fill-current text-spotify-essentialBrightAccent"
+        class="text-spotify-essentialBrightAccent fill-current"
       />
     </div>
 
@@ -101,11 +88,11 @@ watch(elapsed, (value) => {
     />
     <TrackControls
       v-bind="controls"
+      class="mt-10"
       @pause="onPause"
       @play="onPlay"
       @repeat="onRepeat"
       @shuffle="onShuffle"
-      class="mt-10"
     />
 
     <FooterControls class="mt-9" />

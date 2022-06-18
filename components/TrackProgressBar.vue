@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const props = defineProps<{
-  trackLength: number
-  elapsed: number
   counter: number
+  elapsed: number
+  trackLength: number
 }>()
 
 const progressPercent = computed(() => {
@@ -30,14 +30,14 @@ const displayRemaining = computed(() => {
 </script>
 
 <template>
-  <div class="w-full h-1 bg-white/20 rounded mt-8">
+  <div class="mt-8 w-full h-1 bg-white/20 rounded">
     <div
-      class="h-1 bg-white rounded relative flex items-center mb-1 transition-all ease-linear"
+      class="flex relative items-center mb-1 h-1 bg-white rounded"
       :style="`width: ${progressPercent}%;`"
     >
-      <div class="rounded-full h-2 w-2 bg-white right-0 absolute"></div>
+      <div class="absolute right-0 w-2 h-2 bg-white rounded-full"></div>
     </div>
-    <div class="w-full flex justify-between text-xxs text-gray-300">
+    <div class="flex justify-between w-full text-xxs text-gray-300">
       <span>{{ displayElapsed }}</span>
       <span>-{{ displayRemaining }}</span>
     </div>

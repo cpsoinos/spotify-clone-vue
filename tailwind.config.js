@@ -40,8 +40,7 @@ module.exports = {
           essentialPositive: '#1ed760',
           essentialAnnouncement: '#0d72ea',
           decorativeBase: '#fff',
-          decorativeSubdued: '#292929',
-          essentialBrightAccent: '#1ed760'
+          decorativeSubdued: '#292929'
         }
       },
       fontSize: {

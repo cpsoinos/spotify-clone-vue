@@ -7,14 +7,14 @@ import IconQueue from '~/assets/svg/spotify/queue.svg'
 <template>
   <div class="flex justify-between">
     <button>
-      <icon-connect-to-device class="fill-current w-4 h-4" />
+      <icon-connect-to-device class="w-4 h-4 fill-current" />
     </button>
-    <div class="flex items-center gap-7">
+    <div class="flex gap-7 items-center">
       <button>
-        <icon-share class="fill-current w-4 h-4" />
+        <icon-share class="w-4 h-4 fill-current" />
       </button>
       <button>
-        <icon-queue class="fill-current w-4 h-4" />
+        <icon-queue class="w-4 h-4 fill-current" />
       </button>
     </div>
   </div>

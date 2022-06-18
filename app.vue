@@ -5,11 +5,7 @@ useHead({
   }
 })
 
-const primaryColor = ref('#000')
-
-const onColorSet = (color: string) => {
-  primaryColor.value = color
-}
+const bgColor = useBgColor()
 </script>
 
 <template>
@@ -18,9 +14,9 @@ const onColorSet = (color: string) => {
       class="flex overflow-hidden overflow-y-scroll relative mx-auto w-full max-w-[390px] h-[843px] bg-black rounded-[3rem] border-2 border-zinc-600 shadow-2xl"
     >
       <div class="flex flex-col items-center p-3 w-full">
-        <div class="background-gradient w-full h-full rounded-[2rem]">
+        <div class="w-full h-full rounded-[2rem] background-gradient">
           <StatusBar />
-          <NuxtPage @color-set="onColorSet" />
+          <NuxtPage />
         </div>
       </div>
     </div>
@@ -29,6 +25,6 @@ const onColorSet = (color: string) => {
 
 <style>
 .background-gradient {
-  background-image: linear-gradient(v-bind(primaryColor), rgb(0, 0, 0) 85%);
+  background-image: linear-gradient(v-bind(bgColor), rgb(0, 0, 0) 85%);
 }
 </style>
