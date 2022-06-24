@@ -1,0 +1,45 @@
+# The name of your Worker. Alphanumeric values and dashes only.
+name = "nuxtify"
+compatibility_date = "2022-06-17"
+
+# Path to a custom tsconfig
+tsconfig = "./tsconfig.json"
+
+# Minify the script before uploading.
+minify = false
+
+# Add polyfills for node builtin modules and globals
+node_compat = false
+
+# The entrypoint/path to the file that will be executed.
+main = "./.output/server/index.mjs"
+
+# This is the ID of the account associated with your zone.
+# You might have more than one account, so make sure to use
+# the ID of the account associated with the zone/route you
+# provide, if you provide one. It can also be specified through
+# the CLOUDFLARE_ACCOUNT_ID environment variable.
+account_id = "62dd6e6f44a50c62d4ad76a0122f5a3c"
+
+# Whether you use `<NAME>.<SUBDOMAIN>.workers.dev` to
+# test and deploy your Worker.
+# @default `true`
+workers_dev = true
+
+# Configures a custom build step to be run by Wrangler when building your Worker.
+# Refer to the [custom builds documentation](https://developers.cloudflare.com/workers/cli-wrangler/configuration#build)
+# for more details.
+# @default {}
+[build]
+  # The command used to build your Worker. On Linux and macOS, the command is executed in the `sh` shell and the `cmd` shell for Windows.
+  # The `&&` and `||` shell operators may be used.
+  command = "pnpm build"
+
+# The definition of a Worker Site, a feature that lets you upload
+# static assets with your Worker.
+# Learn more here about sites: https://developers.cloudflare.com/workers/platform/sites
+[site]
+  # The directory containing your static assets.
+  # It must be a path relative to your `wrangler.toml` file.
+  # If there is a `site` field then it must contain this `bucket` field.
+  bucket = ".output/public"

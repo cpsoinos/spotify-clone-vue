@@ -26,15 +26,3 @@ export const useCurrentTrack = () =>
     title: 'The End Of The Dream',
     length: 294
   }))
-
-export const useBgColor = () =>
-  useState<string>('bgColor', () => {
-    const currentAlbum = useCurrentAlbum()
-    const { data: extractedColor } = useFetch('/api/extract-color', {
-      params: { src: currentAlbum.value.artwork }
-    })
-    return computed(() => {
-      const [r, g, b] = extractedColor.value
-      return `rgba(${r}, ${g}, ${b}, 0.6)`
-    })
-  })
