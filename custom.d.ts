@@ -7,3 +7,9 @@ declare module '*.svg' {
   const content: Svg
   export default content
 }
+
+declare global {
+  interface Window {
+    Vibrant?: typeof import('node-vibrant')
+  }
+}
