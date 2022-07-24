@@ -13,19 +13,19 @@
     "@cpsoinos/eslint-config-vue-ts": "^0.1.0",
     "@cpsoinos/prettier-config": "^0.0.0",
     "@nuxtjs/eslint-config-typescript": "^9.0.0",
-    "@nuxtjs/tailwindcss": "^5.1.2",
-    "eslint": "^8.14.0",
+    "@nuxtjs/tailwindcss": "^5.3.0",
+    "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-n": "^15.2.0",
-    "eslint-plugin-tailwindcss": "^3.5.0",
-    "nuxt": "3.0.0-rc.3",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-tailwindcss": "^3.6.0",
+    "nuxt": "3.0.0-rc.6",
     "nuxt-svgo": "^1.0.0",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.4",
-    "wrangler": "^2.0.15"
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4",
+    "wrangler": "^2.0.22"
   },
   "dependencies": {
-    "@vueuse/nuxt": "^8.6.0",
+    "@vueuse/nuxt": "^8.9.4",
     "node-vibrant": "3.2.1-alpha.1"
   }
 }
