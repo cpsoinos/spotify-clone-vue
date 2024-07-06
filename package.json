@@ -20,7 +20,8 @@
     "package.json": "sort-package-json"
   },
   "dependencies": {
-    "@vueuse/nuxt": "^10.11.0"
+    "@vueuse/nuxt": "^10.11.0",
+    "posthog-js": "^1.144.2"
   },
   "devDependencies": {
     "@cpsoinos/eslint-config-vue-ts": "^0.1.3",
