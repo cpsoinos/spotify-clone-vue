@@ -1,20 +1,25 @@
-import { defineNuxtConfig } from 'nuxt'
-import NuxtSVGO from 'nuxt-svgo'
-
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', NuxtSVGO, '@vueuse/nuxt'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-svgo', '@vueuse/nuxt'],
   svgo: {
     svgoConfig: {
       multipass: true,
-      removeViewBox: false
-    }
+      plugins: [
+        {
+          name: 'preset-default',
+          params: {
+            overrides: {
+              removeViewBox: false,
+            },
+          },
+        },
+      ],
+    },
   },
   typescript: {
-    shim: false
+    shim: false,
   },
   nitro: {
     preset: 'cloudflare',
-    minify: false
-  }
+    minify: false,
+  },
 })
