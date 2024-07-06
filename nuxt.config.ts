@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-svgo', '@vueuse/nuxt', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-svgo', '@vueuse/nuxt'],
   svgo: {
     svgoConfig: {
       multipass: true,
