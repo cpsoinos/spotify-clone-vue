@@ -3,6 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "ci:format": "prettier --write --check --no-error-on-unmatched-pattern \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
+    "deploy": "op plugin run -- wrangler deploy",
     "dev": "nuxt dev",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "generate": "nuxt generate",
