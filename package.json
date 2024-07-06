@@ -19,9 +19,7 @@
     "package.json": "sort-package-json"
   },
   "dependencies": {
-    "@vueuse/nuxt": "^10.11.0",
-    "colorthief": "^2.4.0",
-    "node-vibrant": "3.2.1-alpha.1"
+    "@vueuse/nuxt": "^10.11.0"
   },
   "devDependencies": {
     "@cpsoinos/eslint-config-vue-ts": "^0.1.3",

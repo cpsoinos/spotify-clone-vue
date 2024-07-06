@@ -1,10 +1,7 @@
 <script setup lang="ts">
-  import ColorThief from 'colorthief'
   import IconChevronDown from '~/assets/svg/spotify/chevron-down.svg'
   import IconEllipses from '~/assets/svg/spotify/ellipses.svg'
   import IconLikeFilled from '~/assets/svg/spotify/like-filled.svg'
-
-  const emit = defineEmits(['album-color-extracted'])
 
   const currentAlbum = useCurrentAlbum()
   const currentTrack = useCurrentTrack()
@@ -54,31 +51,6 @@
       counter.value = 0
     }
   })
-
-  const img = ref<HTMLImageElement | null>(null)
-
-  const extractDominantColors = () => {
-    const colorThief = new ColorThief()
-    const dominantColor = colorThief.getColor(img.value)
-    const palette = colorThief.getPalette(img.value, 2)
-
-    console.log({ dominantColor, palette })
-
-    if (palette.length >= 2) {
-      // const gradient = `linear-gradient(to bottom, rgb(${palette[0].join(',')}), rgb(${palette[1].join(',')}))`
-      const gradient = `linear-gradient(rgb(${palette[0].join(',')}), rgb(0, 0, 0) 85%)`
-      emit('album-color-extracted', gradient)
-    } else {
-      const fallbackColor = dominantColor ? `rgb(${dominantColor.join(',')})` : 'black'
-      emit('album-color-extracted', fallbackColor)
-    }
-  }
-
-  onMounted(() => {
-    if (img.value!.complete) {
-      extractDominantColors()
-    }
-  })
 </script>
 
 <template>
@@ -95,14 +67,7 @@
       </button>
     </div>
 
-    <!-- <nuxt-img ref="img" class="w-full" :src="currentAlbum.artwork" @load="extractDominantColors" /> -->
-    <img
-      ref="img"
-      class="w-full"
-      :src="currentAlbum.artwork"
-      crossorigin="anonymous"
-      @load="extractDominantColors"
-    />
+    <img class="w-full" :src="currentAlbum.artwork" />
 
     <div class="mt-14 flex items-center justify-between">
       <div>
