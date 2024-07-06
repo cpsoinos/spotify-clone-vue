@@ -17,8 +17,11 @@
       })
   }
 
-  onMounted(() => {
-    if (window && window.Vibrant) {
+  onMounted(async () => {
+    if (window) {
+      await import(
+        'https://cdn.jsdelivr.net/npm/node-vibrant@3.2.1-alpha.1/dist/vibrant.worker.min.js'
+      )
       extractColor()
     }
   })
@@ -26,9 +29,6 @@
 
 <template>
   <div class="flex min-h-screen items-center justify-center">
-    <Script
-      src="https://cdn.jsdelivr.net/npm/node-vibrant@3.2.1-alpha.1/dist/vibrant.worker.min.js"
-    ></Script>
     <div
       class="relative mx-auto flex h-[843px] w-full max-w-[390px] overflow-hidden overflow-y-scroll rounded-[3rem] border-2 border-zinc-600 bg-black shadow-2xl"
     >

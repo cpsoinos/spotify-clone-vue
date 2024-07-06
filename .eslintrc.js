@@ -3,9 +3,9 @@ module.exports = {
     '@cpsoinos/eslint-config-vue-ts',
     '@nuxtjs/eslint-config-typescript',
     'plugin:tailwindcss/recommended',
-    'prettier'
+    'prettier',
   ],
   rules: {
-    'tailwindcss/no-custom-classname': [0]
-  }
+    'tailwindcss/no-custom-classname': [0],
+  },
 }

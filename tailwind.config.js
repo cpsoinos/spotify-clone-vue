@@ -3,12 +3,12 @@ module.exports = {
     './components/**/*.{js,vue,ts}',
     './layouts/**/*.vue',
     './pages/**/*.vue',
-    './plugins/**/*.{js,ts}'
+    './plugins/**/*.{js,ts}',
   ],
   theme: {
     fontFamily: {
       apple: ['sf-pro', 'helvetica', 'system-ui', 'sans-serif'],
-      spotify: ['spotify-circular', 'system-ui', 'sans-serif']
+      spotify: ['spotify-circular', 'system-ui', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -40,13 +40,13 @@ module.exports = {
           essentialPositive: '#1ed760',
           essentialAnnouncement: '#0d72ea',
           decorativeBase: '#fff',
-          decorativeSubdued: '#292929'
-        }
+          decorativeSubdued: '#292929',
+        },
       },
       fontSize: {
-        xxs: '0.7rem'
-      }
-    }
+        xxs: '0.7rem',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 }
