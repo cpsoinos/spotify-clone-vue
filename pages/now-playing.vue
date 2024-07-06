@@ -6,6 +6,10 @@
   const currentAlbum = useCurrentAlbum()
   const currentTrack = useCurrentTrack()
 
+  useHead({
+    title: `Nuxtify | Now Playing: ${currentAlbum.value.artist} - ${currentTrack.value.title}`,
+  })
+
   const { counter, pause, resume: play } = useInterval(100, { controls: true })
 
   const elapsed = computed(() => counter.value / 10)

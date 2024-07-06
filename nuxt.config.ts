@@ -22,4 +22,20 @@ export default defineNuxtConfig({
     preset: 'cloudflare',
     minify: false,
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/anderapps-favicon.svg',
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/anderapps-favicon.png',
+        },
+      ],
+    },
+  },
 })
