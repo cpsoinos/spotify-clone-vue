@@ -6,7 +6,7 @@ compatibility_date = "2022-06-17"
 tsconfig = "./tsconfig.json"
 
 # Minify the script before uploading.
-minify = false
+minify = true
 
 # Add polyfills for node builtin modules and globals
 node_compat = false
@@ -31,15 +31,15 @@ workers_dev = true
 # for more details.
 # @default {}
 [build]
-  # The command used to build your Worker. On Linux and macOS, the command is executed in the `sh` shell and the `cmd` shell for Windows.
-  # The `&&` and `||` shell operators may be used.
-  command = "pnpm build"
+# The command used to build your Worker. On Linux and macOS, the command is executed in the `sh` shell and the `cmd` shell for Windows.
+# The `&&` and `||` shell operators may be used.
+command = "pnpm build"
 
 # The definition of a Worker Site, a feature that lets you upload
 # static assets with your Worker.
 # Learn more here about sites: https://developers.cloudflare.com/workers/platform/sites
 [site]
-  # The directory containing your static assets.
-  # It must be a path relative to your `wrangler.toml` file.
-  # If there is a `site` field then it must contain this `bucket` field.
-  bucket = ".output/public"
+# The directory containing your static assets.
+# It must be a path relative to your `wrangler.toml` file.
+# If there is a `site` field then it must contain this `bucket` field.
+bucket = ".output/public"
