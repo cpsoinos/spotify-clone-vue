@@ -38,4 +38,10 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    public: {
+      posthogPublicKey: 'phc_KGusOUMUYA7XArZ0HH3ZIsaZnOCFGMzsPcL8VLfTMis',
+      posthogHost: 'https://ph.anderapps.com',
+    },
+  },
 })
