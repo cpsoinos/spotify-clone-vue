@@ -6,7 +6,8 @@
     "dev": "nuxt dev",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,vue,md,mdx,gql,graphql,json,yml,yaml}\"",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.ts,.vue --fix .",
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "lint:fix": "eslint --ext .js,.ts,.vue --fix .",
     "prepare": "husky",
     "preview": "nuxt preview"
   },
