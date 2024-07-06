@@ -44,11 +44,11 @@
       }"
       @click="emit('shuffle')"
     >
-      <icon-shuffle class="size-5 fill-current" />
+      <icon-shuffle class="size-5 fill-current" :font-controlled="false" />
     </button>
 
     <button class="text-white active:text-gray-300" @click="emit('previous')">
-      <icon-skip-backward class="size-9 fill-current" />
+      <icon-skip-backward class="size-9 fill-current" :font-controlled="false" />
     </button>
 
     <button
@@ -56,18 +56,24 @@
       class="group flex items-center justify-center rounded-full bg-white p-4 active:m-1 active:bg-gray-300"
       @click="emit('play')"
     >
-      <icon-play class="size-7 fill-current text-black group-active:size-5" />
+      <icon-play
+        class="size-7 fill-current text-black group-active:size-5"
+        :font-controlled="false"
+      />
     </button>
     <button
       v-else
       class="group flex items-center justify-center rounded-full bg-white p-4 active:m-1 active:bg-gray-300"
       @click="emit('pause')"
     >
-      <icon-pause class="size-7 fill-current text-black group-active:size-5" />
+      <icon-pause
+        class="size-7 fill-current text-black group-active:size-5"
+        :font-controlled="false"
+      />
     </button>
 
     <button class="text-white active:text-gray-300" @click="emit('next')">
-      <icon-skip-forward class="size-9 fill-current" />
+      <icon-skip-forward class="size-9 fill-current" :font-controlled="false" />
     </button>
 
     <button

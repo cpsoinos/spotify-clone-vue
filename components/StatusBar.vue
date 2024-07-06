@@ -23,9 +23,9 @@
       <div class="notch bg-black"></div>
     </div>
     <div class="flex items-center justify-center gap-2 pt-1.5">
-      <icon-cellular-connectivity class="w-[18px] text-white" />
-      <icon-wifi class="block w-[18px] text-white" />
-      <icon-battery class="w-[24px] text-white" />
+      <icon-cellular-connectivity class="w-[18px] text-white" :font-controlled="false" />
+      <icon-wifi class="block w-[18px] text-white" :font-controlled="false" />
+      <icon-battery class="w-[24px] text-white" :font-controlled="false" />
     </div>
   </div>
 </template>

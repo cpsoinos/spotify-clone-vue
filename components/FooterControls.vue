@@ -7,14 +7,14 @@
 <template>
   <div class="flex justify-between">
     <button>
-      <icon-connect-to-device class="size-4 fill-current" />
+      <icon-connect-to-device class="size-4 fill-current" :font-controlled="false" />
     </button>
     <div class="flex items-center gap-7">
       <button>
-        <icon-share class="size-4 fill-current" />
+        <icon-share class="size-4 fill-current" :font-controlled="false" />
       </button>
       <button>
-        <icon-queue class="size-4 fill-current" />
+        <icon-queue class="size-4 fill-current" :font-controlled="false" />
       </button>
     </div>
   </div>

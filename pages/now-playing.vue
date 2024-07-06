@@ -61,13 +61,13 @@
   <div class="w-full px-4 font-spotify text-white">
     <div class="mb-12 flex items-center justify-between">
       <button>
-        <icon-chevron-down class="size-5" />
+        <icon-chevron-down class="size-5" :font-controlled="false" />
       </button>
       <p class="text-xs font-semibold">
         {{ currentAlbum.title }}
       </p>
       <button>
-        <icon-ellipses class="size-5" />
+        <icon-ellipses class="size-5" :font-controlled="false" />
       </button>
     </div>
 
@@ -80,7 +80,10 @@
         </h1>
         <p class="text-sm text-gray-300">{{ currentAlbum.artist }}</p>
       </div>
-      <icon-like-filled class="fill-current text-spotify-essentialBrightAccent" />
+      <icon-like-filled
+        class="fill-current text-spotify-essentialBrightAccent"
+        :font-controlled="false"
+      />
     </div>
 
     <TrackProgressBar :track-length="currentTrack.length" :elapsed="elapsed" :counter="counter" />
