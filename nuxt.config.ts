@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss', 'nuxt-svgo', '@vueuse/nuxt'],
+
   svgo: {
     svgoConfig: {
       multipass: true,
@@ -15,13 +16,16 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   typescript: {
     shim: false,
   },
+
   nitro: {
     preset: 'cloudflare',
     minify: false,
   },
+
   app: {
     head: {
       link: [
@@ -38,10 +42,13 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   runtimeConfig: {
     public: {
       posthogPublicKey: 'phc_KGusOUMUYA7XArZ0HH3ZIsaZnOCFGMzsPcL8VLfTMis',
       posthogHost: 'https://ph.anderapps.com',
     },
   },
+
+  compatibilityDate: '2024-07-31',
 })
