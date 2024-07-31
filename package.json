@@ -21,25 +21,25 @@
   },
   "dependencies": {
     "@vueuse/nuxt": "^10.11.0",
-    "posthog-js": "^1.144.2"
+    "posthog-js": "^1.152.1"
   },
   "devDependencies": {
     "@cpsoinos/eslint-config-vue-ts": "^0.1.3",
     "@cpsoinos/prettier-config": "^1.0.0",
     "@nuxtjs/eslint-config-typescript": "^9.0.0",
-    "@nuxtjs/tailwindcss": "^6.12.0",
+    "@nuxtjs/tailwindcss": "^6.12.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-tailwindcss": "^3.17.4",
-    "husky": "^9.0.11",
+    "husky": "^9.1.4",
     "lint-staged": "^15.2.7",
-    "nuxt": "3.12.3",
-    "nuxt-svgo": "^4.0.1",
-    "prettier": "^3.3.2",
+    "nuxt": "3.12.4",
+    "nuxt-svgo": "^4.0.2",
+    "prettier": "^3.3.3",
     "sort-package-json": "^2.10.0",
-    "typescript": "^5.5.3",
-    "wrangler": "^3.63.1"
+    "typescript": "^5.5.4",
+    "wrangler": "^3.67.1"
   },
-  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a"
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
 }
